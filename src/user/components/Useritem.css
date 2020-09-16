@@ -1,0 +1,11 @@
+#hover :hover,
+#hover :active {
+  background-color: #ffd900;
+}
+
+#hover:hover h3,
+#hover:active h3,
+#hover:hover p,
+#hover:active p {
+  color: #292929;
+}
