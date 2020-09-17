@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import Card from "../../shared/components/UIElements/Card";
 import PlaceItem from "./PlaceItem";
+import { useParams } from "react-router-dom";
 
-const PlaceList = (props) => {
-  const places = [
+const PlaceList = ({ places }) => {
+  /*const places = [
     {
       id: "p1",
       title: "Empire State Building",
@@ -30,11 +32,14 @@ const PlaceList = (props) => {
       },
       creator: "u1",
     },
-  ];
+  ];*/
 
-  if (places.length === 0) {
+  const userId = useParams().userId;
+  const loadedPlaces = places.filter((place) => place.creator === userId);
+
+  if (loadedPlaces.length === 0) {
     return (
-      <div class="ui centered card">
+      <div style={{ textAlign: "center" }} class="ui centered card">
         <div class="content">
           <div class="header">No Places found. Maybe Create One?</div>
         </div>
@@ -47,7 +52,7 @@ const PlaceList = (props) => {
 
   return (
     <div className="ui container">
-      {places.map((place) => (
+      {loadedPlaces.map((place) => (
         <PlaceItem
           key={place.id}
           id={place.id}
@@ -63,4 +68,10 @@ const PlaceList = (props) => {
   );
 };
 
-export default PlaceList;
+const mapStateToProps = (state) => {
+  return {
+    places: state.places,
+  };
+};
+
+export default connect(mapStateToProps)(PlaceList);

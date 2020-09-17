@@ -51,7 +51,7 @@ const MainHeader = ({ isSignedIn }) => {
               </Link>
             </NavItem>
             <NavItem onClick={isOpen ? toggle : ""}>
-              <Link style={{ textDecoration: "none" }} to="/u1/places">
+              <Link style={{ textDecoration: "none" }} to="/u2/places">
                 <h4
                   style={{
                     color: "white",

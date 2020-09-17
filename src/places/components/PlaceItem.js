@@ -18,9 +18,9 @@ const PlaceItem = (props) => {
       </div>
       <div class="extra content">
         <div class="ui three buttons">
-          <div class="ui basic green button">View On Map</div>
-          <div class="ui basic yellow button">Edit</div>
-          <div class="ui basic red button">Delete</div>
+          <div class="ui green button">View On Map</div>
+          <div class="ui yellow button">Edit</div>
+          <div class="ui red button">Delete</div>
         </div>
       </div>
     </div>

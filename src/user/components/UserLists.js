@@ -1,6 +1,7 @@
 import React from "react";
 import "./UserLists.css";
 import UserItem from "./UserItem";
+import { NavLink } from "react-router-dom";
 
 const UserLists = (props) => {
   const users = [
@@ -10,20 +11,23 @@ const UserLists = (props) => {
       image:
         "https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       places: 3,
+      userId: "u1",
     },
     {
       id: 1516,
-      name: "Bob Dhillon",
+      name: "Parminder Dhillon",
       image:
         "https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       places: 3,
+      userId: "u2",
     },
     {
       id: 1516,
-      name: "Bob Dhillon",
+      name: "Johnny bravo",
       image:
         "https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       places: 3,
+      userId: "u3",
     },
   ];
   /*{
@@ -46,13 +50,18 @@ const UserLists = (props) => {
         <div className="ui container">
           <div className="ui stackable cards">
             {users.map((user) => (
-              <UserItem
-                key={user.id}
-                id={user.id}
-                image={user.image}
-                name={user.name}
-                placeCount={user.places}
-              />
+              <NavLink
+                to={`/${user.userId}/places`}
+                style={{ textDecoration: "none" }}
+              >
+                <UserItem
+                  key={user.id}
+                  id={user.id}
+                  image={user.image}
+                  name={user.name}
+                  placeCount={user.places}
+                />
+              </NavLink>
             ))}
           </div>
         </div>
