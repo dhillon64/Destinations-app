@@ -6,7 +6,7 @@ const UserItem = (props) => {
     <div
       id="hover"
       className="ui centered raised link card"
-      style={{ backgroundColor: "black", width: "430px" }}
+      style={{ backgroundColor: "black", width: "430px", marginTop: "10px" }}
     >
       <div className="content">
         <img

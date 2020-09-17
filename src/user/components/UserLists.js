@@ -1,7 +1,8 @@
 import React from "react";
 import "./UserLists.css";
 import UserItem from "./UserItem";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "reactstrap";
+import { Link as RRLink } from "react-router-dom";
 
 const UserLists = (props) => {
   const users = [
@@ -51,6 +52,7 @@ const UserLists = (props) => {
           <div className="ui stackable cards">
             {users.map((user) => (
               <NavLink
+                tag={RRLink}
                 to={`/${user.userId}/places`}
                 style={{ textDecoration: "none" }}
               >
